@@ -20,4 +20,11 @@ export const LightTheme = createTheme({
         paper: '#ffffff',
     }
   },
+  components:{
+    MuiButton:{
+      defaultProps:{
+        variant : "outlined"
+      }
+    }
+  }
 });
