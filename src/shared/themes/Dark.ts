@@ -15,9 +15,16 @@ export const DarkTheme = createTheme({
       light: cyan[500],
       contrastText: "#ffffff",
     },
-    background:{
-        default:'#202124',
-        paper: '#303134',
-    }
+    background: {
+      default: "#202124",
+      paper: "#303134",
+    },
+  },
+  components: {
+    MuiButton: {
+      defaultProps: {
+        variant: "outlined",
+      },
+    },
   },
 });

@@ -15,16 +15,16 @@ export const LightTheme = createTheme({
       light: cyan[500],
       contrastText: "#ffffff",
     },
-    background:{
-        default:'#f7f6f3',
-        paper: '#ffffff',
-    }
+    background: {
+      default: "#f7f6f3",
+      paper: "#ffffff",
+    },
   },
-  components:{
-    MuiButton:{
-      defaultProps:{
-        variant : "outlined"
-      }
-    }
-  }
+  components: {
+    MuiButton: {
+      defaultProps: {
+        variant: "outlined",
+      },
+    },
+  },
 });
