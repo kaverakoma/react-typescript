@@ -55,6 +55,7 @@ export const MenuLateral: React.FC<IMenuLateralProps> = ({ children }) => {
   const theme = useTheme();
   const smDown = useMediaQuery(theme.breakpoints.down("sm"));
   const { isDrawerOpen, toggleDrawerOpen, drawerOptions } = useDrawerContext();
+
   return (
     <>
       <Drawer
@@ -86,14 +87,14 @@ export const MenuLateral: React.FC<IMenuLateralProps> = ({ children }) => {
           <Divider />
           <Box flex={1}>
             <List component="nav">
-              {drawerOptions.map((drawerOption) =>(
-                  <ListItemLink
-                    key={drawerOption.path}
-                    icon={drawerOption.icon}
-                    to={drawerOption.path}
-                    label={drawerOption.label}
-                    onClick={smDown ? toggleDrawerOpen : undefined}
-                  />
+              {drawerOptions.map((drawerOption) => (
+                <ListItemLink
+                  key={drawerOption.path}
+                  icon={drawerOption.icon}
+                  to={drawerOption.path}
+                  label={drawerOption.label}
+                  onClick={smDown ? toggleDrawerOpen : undefined}
+                />
               ))}
             </List>
           </Box>
