@@ -24,7 +24,7 @@ export const DarkTheme = createTheme({
   components: {
     MuiButton: {
       defaultProps: {
-        variant: "outlined",
+        variant: "contained",
       },
     },
   },

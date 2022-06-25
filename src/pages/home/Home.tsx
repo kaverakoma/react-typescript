@@ -1,9 +1,5 @@
-import { LayoutBasePage } from "../../shared/layouts"
+import { LayoutBasePage } from "../../shared/layouts";
 
 export const Home = () => {
-    return (
-        <LayoutBasePage>
-            teste
-        </LayoutBasePage>
-    )
-}
+  return <LayoutBasePage>Home Page</LayoutBasePage>;
+};

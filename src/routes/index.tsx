@@ -1,32 +1,36 @@
 import { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import { Home } from "../pages";
+import { Home, Dashboard, TipoVeiculos } from "../pages";
 import { useDrawerContext } from "../shared/contexts";
 
 export const AppRoutes = () => {
-  const { setDrawerOptions, } = useDrawerContext();
+  const { setDrawerOptions } = useDrawerContext();
 
-  useEffect(()=>{
+  useEffect(() => {
     setDrawerOptions([
       {
         label: "Página inicial",
         path: "/home",
-        icon: 'home',
+        icon: "home",
       },
       {
-        label: "edgar",
-        path: "/edgar",
-        icon: 'star',
-      }
+        label: "Dashboard",
+        path: "/dasboard",
+        icon: "dashboard",
+      },
+      {
+        label: "Tipo de Veiculos",
+        path: "/tipoVeiculos",
+        icon: "commute",
+      },
     ]);
-  },[])
+  }, []);
 
   return (
     <Routes>
-      <Route
-        path="/home"
-        element={<Home/>}   
-      />
+      <Route path="/home" element={<Home />} />
+      <Route path="/dasboard" element={<Dashboard />} />
+      <Route path="/tipoVeiculos" element={<TipoVeiculos/>} />
       <Route path="*" element={<Navigate to={"/home"} />} />
     </Routes>
   );

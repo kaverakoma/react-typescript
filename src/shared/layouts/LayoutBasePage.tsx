@@ -1,12 +1,22 @@
-import { Icon, IconButton, useTheme, useMediaQuery, Divider } from "@mui/material";
+import {
+  Icon,
+  IconButton,
+  useTheme,
+  useMediaQuery,
+  Divider,
+} from "@mui/material";
 import { Box } from "@mui/system";
 import { useDrawerContext } from "../contexts";
 
 interface ILayoutBasePage {
   children: React.ReactNode;
+  barraDeFerramentas?: React.ReactNode;
 }
 
-export const LayoutBasePage: React.FC<ILayoutBasePage> = ({ children }) => {
+export const LayoutBasePage: React.FC<ILayoutBasePage> = ({
+  children,
+  barraDeFerramentas,
+}) => {
   const theme = useTheme();
   const smDown = useMediaQuery(theme.breakpoints.down("sm"));
   const { toggleDrawerOpen } = useDrawerContext();
@@ -35,10 +45,12 @@ export const LayoutBasePage: React.FC<ILayoutBasePage> = ({ children }) => {
             height={theme.spacing(11)}
           />
         )}
-
       </Box>
-      <Divider/>
-      <Box flex={1} overflow="auto">
+      <Divider />
+
+      {barraDeFerramentas && <Box paddingX={1}>{barraDeFerramentas}</Box>}
+
+      <Box flex={1} overflow="auto" padding={1}>
         {children}
       </Box>
     </Box>

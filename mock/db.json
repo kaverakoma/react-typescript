@@ -1,0 +1,16 @@
+{
+  "TipoVeiculo": [
+    {
+      "descricao": "Carro Velho",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "descricao": "SUV"
+    },
+    {
+      "id": 3,
+      "descricao": "Caminhao"
+    }
+  ]
+}

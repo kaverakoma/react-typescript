@@ -24,7 +24,7 @@ export const LightTheme = createTheme({
   components: {
     MuiButton: {
       defaultProps: {
-        variant: "outlined",
+        variant: "contained",
       },
     },
   },
