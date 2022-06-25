@@ -1,4 +1,12 @@
-import { Box, Button, Icon, Paper, TextField, useTheme } from "@mui/material";
+import {
+  Box,
+  Button,
+  Icon,
+  Paper,
+  TextField,
+  Typography,
+  useTheme,
+} from "@mui/material";
 
 interface IBarraDeFerramentasProps {
   textoBusca?: string;
@@ -9,11 +17,11 @@ interface IBarraDeFerramentasProps {
   aoClicarNoBotaoNovo?: () => void;
 }
 
-export const BarraDeFerramentas: React.FC<IBarraDeFerramentasProps> = ({
+export const BarraDeFerramentasListagem: React.FC<IBarraDeFerramentasProps> = ({
   textoBusca = "",
   mostrarInputBusca = false,
   aoMudarTextoBusca,
-  textoBotaoNovo = "",
+  textoBotaoNovo = "Novo",
   mostrarBotaoNovo = false,
   aoClicarNoBotaoNovo,
 }) => {
@@ -21,7 +29,7 @@ export const BarraDeFerramentas: React.FC<IBarraDeFerramentasProps> = ({
   return (
     <Box
       height={theme.spacing(4)}
-      padding={2}
+      padding={1}
       display="flex"
       gap={1}
       alignItems="center"
@@ -38,7 +46,7 @@ export const BarraDeFerramentas: React.FC<IBarraDeFerramentasProps> = ({
       {mostrarBotaoNovo && (
         <Box flex={1} display="flex" justifyContent="end">
           <Button disableElevation endIcon={<Icon>add</Icon>}>
-            Novo
+            {textoBotaoNovo}
           </Button>
         </Box>
       )}

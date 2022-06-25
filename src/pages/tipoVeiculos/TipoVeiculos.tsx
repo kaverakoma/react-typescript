@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BarraDeFerramentas } from "../../shared/components";
+import { BarraDeFerramentasListagem } from "../../shared/components";
 import { LayoutBasePage } from "../../shared/layouts";
 
 interface IListTipoVeiculos {
@@ -12,7 +12,7 @@ export const TipoVeiculos = () => {
 
   return (
     <LayoutBasePage
-      barraDeFerramentas={<BarraDeFerramentas mostrarInputBusca mostrarBotaoNovo />}
+      barraDeFerramentas={<BarraDeFerramentasListagem mostrarInputBusca mostrarBotaoNovo />}
     >
       Tela De Tipo de Veiculos
     </LayoutBasePage>
