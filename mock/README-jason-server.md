@@ -8,4 +8,4 @@ já esta configurado no arquivo package.json
   },
 
 
-Para rodar o serviço no console " npm run mock" 
+Para rodar o serviço no console "npm run mock" 
