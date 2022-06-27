@@ -40,7 +40,7 @@ const getById = async (id: number): Promise<IDetalheTipoVeiculo | Error> => {
     }
     return Error("Erro ao consultar o registro");
   } catch (error) {
-    console.error(error);
+      console.error(error);
     return Error(
       (error as { massage: string }).massage || "Erro ao consultar o registro"
     );

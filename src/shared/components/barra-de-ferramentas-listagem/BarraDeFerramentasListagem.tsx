@@ -45,7 +45,7 @@ export const BarraDeFerramentasListagem: React.FC<IBarraDeFerramentasProps> = ({
       )}
       {mostrarBotaoNovo && (
         <Box flex={1} display="flex" justifyContent="end">
-          <Button disableElevation endIcon={<Icon>add</Icon>}>
+          <Button disableElevation endIcon={<Icon>add</Icon>} onClick={aoClicarNoBotaoNovo}>
             {textoBotaoNovo}
           </Button>
         </Box>
