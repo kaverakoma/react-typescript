@@ -50,7 +50,7 @@ export const LayoutBasePage: React.FC<ILayoutBasePage> = ({
 
       {barraDeFerramentas && <Box paddingX={1}>{barraDeFerramentas}</Box>}
 
-      <Box flex={1} overflow="auto" padding={1}>
+      <Box flex={1} overflow="auto" paddingX={1}>
         {children}
       </Box>
     </Box>
