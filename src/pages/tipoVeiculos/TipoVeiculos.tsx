@@ -80,7 +80,7 @@ export const TipoVeiculos: React.FC = () => {
     >
       <TableContainer component={Paper}>
         <Table>
-          {listTipoVeiculos.length >= 1 && (
+          {tipoVeiculos.length >= 1 && (
             <TableHead>
               <TableRow>
                 <TableCell>

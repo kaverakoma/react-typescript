@@ -5,7 +5,7 @@ interface TipoVeiculos {
   descricao?: string;
 }
 
-const INITIAL_STATE: TipoVeiculos[] = [{ id: 1, descricao: "Edgar Pavão" }];
+const INITIAL_STATE: TipoVeiculos[] = [{ id: 8, descricao: "Edgar Pavão" }];
 
 const sliceTipoVeiculos = createSlice({
   name: "tipoVeiculos",

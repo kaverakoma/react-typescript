@@ -17,17 +17,18 @@ export const DetalheTipoVeiculos: React.FC<IDetalheTipoVeiculosProps> = ({
   idTipoVeiculo = 0,
   close,
 }) => {
-  useEffect(() => {
-    if (idTipoVeiculo !== 0) {
-      TipoVeiculoService.getById(idTipoVeiculo).then((result) => {
-        if (result instanceof Error) {
-          alert(result.message);
-        } else {
-          console.log(result);
-        }
-      });
-    }
-  }, [idTipoVeiculo]);
+  console.log(open, typeDialog, idTipoVeiculo)
+  // useEffect(() => {
+  //   if (idTipoVeiculo !== 0) {
+  //     TipoVeiculoService.getById(idTipoVeiculo).then((result) => {
+  //       if (result instanceof Error) {
+  //         alert(result.message);
+  //       } else {
+  //         console.log(result);
+  //       }
+  //     });
+  //   }
+  // }, [idTipoVeiculo]);
 
   return (
     <Box component={Paper} display="flex">
