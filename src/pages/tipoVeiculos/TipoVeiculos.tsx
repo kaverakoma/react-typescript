@@ -15,9 +15,11 @@ import {
   Icon,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { BarraDeFerramentasListagem } from "../../shared/components";
 import { LayoutBasePage } from "../../shared/layouts";
 import { TipoVeiculoService } from "../../shared/services/api/tipoVeiculo/TipoVeiculoService";
+import { useTipoVeiculos } from "../../store/slices/sliceTipoVeiculos";
 import { DetalheTipoVeiculos } from "./DetalheTipoVeiculo";
 
 interface IListTipoVeiculos {
@@ -35,6 +37,7 @@ interface IDetalheTipoVeiculos {
 
 export const TipoVeiculos: React.FC = () => {
   const theme = useTheme();
+  const tipoVeiculos = useSelector(useTipoVeiculos)
   const smDown = useMediaQuery(theme.breakpoints.down("sm"));
   const [listTipoVeiculos, setListTipoVeiculos] = useState<IListTipoVeiculos[]>(
     []
@@ -44,6 +47,15 @@ export const TipoVeiculos: React.FC = () => {
     typeDialog: "novo",
   });
 
+  // useEffect(() => {
+  //   TipoVeiculoService.getAll().then((result) => {
+  //     if (result instanceof Error) {
+  //       alert(result.message);
+  //     } else {
+  //       setListTipoVeiculos(result.data);
+  //     }
+  //   });
+  // }, []);
   useEffect(() => {
     TipoVeiculoService.getAll().then((result) => {
       if (result instanceof Error) {
@@ -81,8 +93,8 @@ export const TipoVeiculos: React.FC = () => {
             </TableHead>
           )}
           <TableBody>
-            {listTipoVeiculos.length >= 1 &&
-              listTipoVeiculos.map((tipoVeiculo) => (
+            {tipoVeiculos.length >= 1 &&
+              tipoVeiculos.map((tipoVeiculo) => (
                 <TableRow key={tipoVeiculo.id}>
                   <TableCell>{tipoVeiculo.descricao}</TableCell>
                   <TableCell align="center">
@@ -97,7 +109,7 @@ export const TipoVeiculos: React.FC = () => {
               ))}
           </TableBody>
         </Table>
-        {listTipoVeiculos.length < 1 && (
+        {tipoVeiculos.length < 1 && (
           <Box>
             <SentimentDissatisfied />{" "}
             <Typography variant="h6">
