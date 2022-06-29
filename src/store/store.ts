@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import sliceTipoVeiculos from "./slices/sliceTipoVeiculos"
+import sliceTipoVeiculos from "./features/sliceTipoVeiculos"
 
 const store = configureStore({
     reducer: {
@@ -8,3 +8,5 @@ const store = configureStore({
 });
 
 export default store;
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
